@@ -187,38 +187,20 @@ class Game extends React.Component {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
     return (
-      <div className="game">
-        {/** If there is a draw, hide the game board and show 
-          "Play again" button */
-        gameStatus === "draw" ? (
-          <div className="draw">
-            <h2>Draw!</h2>
-            <button onClick={() => this.reset()}>Play again</button>
-          </div>
-        ) : (
-          /** Otherwise, show the game board */
-          <div className="game-board">
-            <Board
-              squares={current.squares}
-              winningSquares={gameStatus === "win" ? result.win.squares : []}
-              onClick={(i, col, row) => this.handleClick(i, col, row)}
-            />
-            {/** Depending upon the state of the game, either show 
-              "Play again" button or "Reset game" button */
-            gameStatus === "win" ? (
-              <div className="win">
-                <h2>{`"${result.win.player}" is winner!`}</h2>
-                <button onClick={() => this.reset()}>Play again</button>
-              </div>
-            ) : (
-              <div className="reset">
-                <button onClick={() => this.reset()}>Reset game</button>
-              </div>
-            )}
-          </div>
-        )}
-
+      <div>
         <div className="game-info">
+          {/** Depending upon the state of the game, either show 
+          "Play again" button or "Reset game" button */
+          gameStatus === "win" ? (
+            <div className="win">
+              <h2>{`"${result.win.player}" is winner!`}</h2>
+              <button onClick={() => this.reset()}>Play again</button>
+            </div>
+          ) : (
+            <div className="reset">
+              <button onClick={() => this.reset()}>Reset game</button>
+            </div>
+          )}
           <div>{status}</div>
           {/** Show the toggle button only if there are two or more moves to sort */
           history.length > 1 ? (
@@ -227,6 +209,25 @@ class Game extends React.Component {
             ""
           )}
           <ol>{moves}</ol>
+        </div>
+        <div className="game">
+          {/** If there is a draw, hide the game board and show 
+            "Play again" button */
+          gameStatus === "draw" ? (
+            <div className="draw">
+              <h2>Draw!</h2>
+              <button onClick={() => this.reset()}>Play again</button>
+            </div>
+          ) : (
+            /** Otherwise, show the game board */
+            <div className="game-board">
+              <Board
+                squares={current.squares}
+                winningSquares={gameStatus === "win" ? result.win.squares : []}
+                onClick={(i, col, row) => this.handleClick(i, col, row)}
+              />
+            </div>
+          )}
         </div>
       </div>
     );
