@@ -4,6 +4,11 @@ body {
     background-image: url(img/premium_photo-1681255760839-6581e2eb3e96.avif);
   }
 
+  .main{
+    display: flex;
+    justify-content: center;
+  }
+
   .active {
     font-weight: 600;
   }
@@ -79,5 +84,8 @@ body {
   
   .game-info {
     margin-left: 20px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
   }
   
