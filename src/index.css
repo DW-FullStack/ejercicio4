@@ -30,15 +30,15 @@ body {
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 50px;
+    font-size: 31vh;
     font-weight: bold;
     line-height: 34px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 100px;
-    height: 100px;
+    width: 31vh;
+    height: 31vh;
   }
   
   .square:focus {
