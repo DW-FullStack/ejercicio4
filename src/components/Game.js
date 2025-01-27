@@ -187,7 +187,7 @@ class Game extends React.Component {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
     return (
-      <div>
+      <div class="main">
         <div className="game-info">
           {/** Depending upon the state of the game, either show 
           "Play again" button or "Reset game" button */
